@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Card, Badge, Button, Collapse } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
+import styles from "./Job.css";
 
-import defaultImg from "../assets/images/logo.png";
+import defaultImg from "../../assets/images/logo.png";
 
 export default function Job({ job }) {
   const [open, setOpen] = useState(false);
@@ -21,14 +22,10 @@ export default function Job({ job }) {
             <Card.Subtitle className="text-muted mb-2">
               {new Date(job.created_at).toLocaleDateString()}
             </Card.Subtitle>
-            <Badge
-              variant="secondary"
-              className="mr-2"
-              style={{ wordBreak: "break-all" }}
-            >
+            <Badge variant="secondary" className="mr-2 word-break-badge">
               {job.title}
             </Badge>
-            <Badge variant="secondary" className="mr-2">
+            <Badge variant="secondary" className="mr-2 word-break-badge">
               {job.location}
             </Badge>
             <div style={{ wordBreak: "break-all" }}>
@@ -47,7 +44,7 @@ export default function Job({ job }) {
             onClick={() => setOpen((prevOpen) => !prevOpen)}
             variant="primary"
           >
-            {open ? "Hide Deatils" : "View Deatils"}
+            {open ? "Hide Details" : "View Details"}
           </Button>
           <Collapse in={open}>
             <div className="mt-4">

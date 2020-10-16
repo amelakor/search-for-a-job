@@ -24,3 +24,8 @@
   font-size: 5em;
   text-shadow: 2px 2px #1d1d1d;
 }
+@media (max-width: 767px) {
+  .Slider div.Overlay h1 {
+    font-size: 2em;
+  }
+}
