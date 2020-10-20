@@ -7,6 +7,7 @@ export default function ContactForm() {
   //Form
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
+  const [userTitle, setUserTitle] = useState("");
 
   //Modal
   const [show, setShow] = useState(false);
@@ -19,6 +20,7 @@ export default function ContactForm() {
       .add({
         userName: userName,
         email: email,
+        title: userTitle,
       })
       .then(() => {
         alert(
@@ -35,7 +37,7 @@ export default function ContactForm() {
 
   return (
     <div className="contact-form">
-      <h3 onClick={handleShow}>Click Here if you need a help? </h3>
+      <Button onClick={handleShow}>Click Here if you need a help? </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -48,12 +50,23 @@ export default function ContactForm() {
             <Form.Group controlId="formBasiName">
               <Form.Label>You Name</Form.Label>
               <Form.Control
-                type="name"
+                type="text"
                 placeholder="Enter your name"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
               />
             </Form.Group>
+
+            <Form.Group controlId="formBasiName">
+              <Form.Label>You Job Title</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter your Job Title"
+                value={userTitle}
+                onChange={(e) => setUserTitle(e.target.value)}
+              />
+            </Form.Group>
+
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control

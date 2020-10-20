@@ -31,10 +31,10 @@ export default function Home() {
         <SearchForm params={params} onParamChange={handleParamChange} />
         {loading && <Loader />}
         {error && (
-          <h3>
+          <h4>
             Sorry. Something went wrong. Try refreshing the page or come back
             later....{" "}
-          </h3>
+          </h4>
         )}
         {jobs.length === 0 && !loading && (
           <>

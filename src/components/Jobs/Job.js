@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Card, Badge, Button, Collapse } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
-import styles from "./Job.css";
 
 import defaultImg from "../../assets/images/logo.png";
 
