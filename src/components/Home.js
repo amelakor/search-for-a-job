@@ -43,8 +43,8 @@ export default function Home() {
             <ContactForm />
           </>
         )}
-        {jobs.map((job) => {
-          return <Job key={job.id} job={job} />;
+        {jobs.map((item) => {
+          return <Job key={item.id} job={item} />;
         })}
         {loading !== true && jobs.length > 0 && (
           <JobsPagination
