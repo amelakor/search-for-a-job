@@ -51,7 +51,6 @@ const useFetchJobs = (params, page) => {
       })
       .then((res) => {
         dispatch({ type: ACTIONS.GET_DATA, payload: { jobs: res.data } });
-        console.log(res.data);
       })
       .catch((e) => {
         if (axios.isCancel(e)) return;
