@@ -28,8 +28,7 @@ export default function Job({ job }) {
               {job.location}
             </Badge>
             <div style={{ wordBreak: "break-all" }}>
-              {job.how_to_apply}
-              {/* <ReactMarkdown source={job.how_to_apply} /> */}
+              <ReactMarkdown source={job.how_to_apply} />
             </div>
           </div>
           <img
@@ -39,20 +38,18 @@ export default function Job({ job }) {
             alt={job.company}
           />
         </div>
-        <Card.Text>
-          <Button
-            onClick={() => setOpen((prevOpen) => !prevOpen)}
-            variant="primary"
-          >
-            {open ? "Hide Details" : "View Details"}
-          </Button>
-          <Collapse in={open}>
-            <div className="mt-4">
-              <p>{job.description}</p>
-              {/* <ReactMarkdown source={job.description}></ReactMarkdown> */}
-            </div>
-          </Collapse>
-        </Card.Text>
+
+        <Button
+          onClick={() => setOpen((prevOpen) => !prevOpen)}
+          variant="primary"
+        >
+          {open ? "Hide Details" : "View Details"}
+        </Button>
+        <Collapse in={open}>
+          <div className="mt-4">
+            <ReactMarkdown source={job.description}></ReactMarkdown>
+          </div>
+        </Collapse>
       </Card.Body>
     </Card>
   );
